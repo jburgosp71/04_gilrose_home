@@ -1,17 +1,16 @@
-import items.Item;
 
 public class Shop {
-    private Item[] items;
+    private Product[] products;
 
-    public Shop(Item[] items) {
+    public Shop(Product[] products) {
 
-        this.items = items;
+        this.products = products;
     }
 
     public void update() {
-        for (Item item: items) {
-            item.quality -= 1;
-            item.sellIn  -= 1;
+        for (Product product: products) {
+            product.changeQuality();
+            product.changeSellIn();
         }
     }
 }

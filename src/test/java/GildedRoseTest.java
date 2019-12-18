@@ -6,17 +6,12 @@ import static org.hamcrest.Matchers.is;
 
 public class GildedRoseTest {
     @Test
-    public void shouldFail() {
-        assertThat(true, is(true));
-    }
-
-    @Test
     public void everyDayDecreaseSellInAndQuality(){
-        Item item = new Item("GoldCoin",2,2);
+        Product product = new Product("GoldCoin",2,2);
 
-        Shop shop = new Shop(new Item[]{item});
+        Shop shop = new Shop(new Product[]{product});
         shop.update();
 
-        assertThat(item.toString(),is(new Item("GoldCoin",1,1).toString()));
+        assertThat(product.toString(),is(new Product("GoldCoin",1,1).toString()));
     }
 }
